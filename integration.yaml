@@ -1,0 +1,20 @@
+apiVersion: integration/v1
+kind: Integration
+name: rainbow
+channel: stable
+version: v20200408
+summary: Alcatel Lucent Rainbow
+description: >
+    Rainbow business communication solutions offer user friendly collaboration tools from voice to video, that connect people, machines, and processes.
+tags:
+  - collaboration
+  - messaging
+  - alerts
+  - alerting
+license: Apache-2.0
+owner:
+  name: Puppet, Inc.
+  email: relay@puppet.com
+  url: https://puppet.com
+source: git://github.com/relay-integrations/relay-rainbow.git
+homepage: https://github.com/relay-integrations/relay-rainbow

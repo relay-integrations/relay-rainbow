@@ -1,0 +1,36 @@
+apiVersion: integration/v1
+kind: Step
+name: bubble-message-send
+tags:
+  - collaboration
+  - messaging
+  - alerts
+  - alerting
+version: 1
+summary: Send a message to a Rainbow Bubble
+description: |
+  Sends a message to a Rainbow Bubble that you choose.
+build:
+  apiVersion: build/v1
+  kind: Docker
+publish:
+  repository: relaysh/rainbow-step-bubble-message-send
+schemas:
+  spec:
+    source: file
+    file: spec.schema.json
+examples:
+- summary: Send a message
+  content:
+    apiVersion: v1
+    kind: Step
+    name: send-message
+    image: relaysh/slack-step-message-send
+    spec:
+      connection:
+        loginEmail: !Secret loginEmail
+        password: !Secret password
+        appID: !Secret appID
+        appSecret: !Secret appSecret 
+      bubbleName: !Parameter Bubble
+      message: !Parameter message # Example: "hello Relay!"
